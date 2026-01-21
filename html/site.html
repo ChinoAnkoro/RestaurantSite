@@ -48,12 +48,12 @@
         window.addEventListener('scroll', function(){
             const scroll = window.scrollY;
             const windowHeight = window.innerHeight;
-            const containers = document.querySelectorAll('.contents');
+            const fadeins = document.querySelectorAll('.fadein');
 
-            containers.forEach(function(contents){
-                const distanceToContents = contents.offsetTop;
+            fadeins.forEach(function(fadein){
+                const distanceToContents = fadein.offsetTop;
                 if(scroll + windowHeight > distanceToContents){
-                    contents.classList.add('is-active');
+                    fadein.classList.add('is-active');
                 }
             });
         });
@@ -171,14 +171,17 @@
                     </div>
 
                     <div class="information_wrapper my-5">
-                        <h1 class="mb-4 fw-bold fs-2">Signature Food</h1>
-                            <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
-                                <img src="../img/food.jpg" class="img-fluid rounded food_image" alt="">
-                                <div>
-                                    <p>サーモンは刺身やカルパッチョで食べるのが美味しいですが、リッチな気分になれるサーモンステーキがおすすめです。サーモンの美味しさを引き立てる2種のソースも絶品です！</p>
+                        <div class="fadein">
+                            <h1 class="mb-4 fw-bold fs-2">Signature Food</h1>
+                                <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
+                                    <img src="../img/food.jpg" class="img-fluid rounded food_image" alt="">
+                                    <div>
+                                        <p>サーモンは刺身やカルパッチョで食べるのが美味しいですが、リッチな気分になれるサーモンステーキがおすすめです。サーモンの美味しさを引き立てる2種のソースも絶品です！</p>
+                                    </div>
                                 </div>
-                            </div>
+                        </div>
 
+                        <div class="fadein">
                             <h1 class="mb-4 fw-bold fs-2">Our Coffee</h1>
                             <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
                                 <img src="../img/barista.jpg" class="img-fluid rounded food_image" alt="">
@@ -186,7 +189,9 @@
                                     <p>当店のコーヒー豆が厳選して世界中から買い付けています。自社のロースタリーで焙煎しています。</p>
                                 </div>
                             </div>
+                        </div>
 
+                        <div class="fadein">
                             <h1 class="mb-4 fw-bold fs-2">Our Food</h1>
                             <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
                                 <img src="../img/food3.jpg" class="img-fluid rounded food_image" alt="">
@@ -195,51 +200,56 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
                         <div class="d-flex justify-content-center py-5">
-                            <div class="bg-dark text-light p-4 w-100" style="max-width: 800px;">
-                                <div class="row align-items-center flex-column flex-md-row text-center text-md-start">
-                                    <div class="col-md-6">
-                                        <h4>Address</h4>
-                                        <p>681 xxxx Drive, xxxx xxxx #01</p>
-                                        <p>Opening Hours</p>
-                                        <p class="fw-bold mt-3">Mondays - Friday: 10am - 9pm</p>
-                                        <p>Saturdays,Sunday & Public Holidays: 9am - 9pm</p>
-                                    </div>
+                            <div class="fadein">
+                                <div class="bg-dark text-light p-4 w-100" style="max-width: 800px;">
+                                    <div class="row align-items-center flex-column flex-md-row text-center text-md-start">
+                                        <div class="col-md-6">
+                                            <h4>Address</h4>
+                                            <p>681 xxxx Drive, xxxx xxxx #01</p>
+                                            <p>Opening Hours</p>
+                                            <p class="fw-bold mt-3">Mondays - Friday: 10am - 9pm</p>
+                                            <p>Saturdays,Sunday & Public Holidays: 9am - 9pm</p>
+                                        </div>
 
-                                    <div class="col-md-6 text-end">
-                                        <img src="../img/barista.jpg" class="img-fluid">
+                                        <div class="col-md-6 text-end">
+                                            <img src="../img/barista.jpg" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="my-5 text-center d-none d-md-block">
-                            <h4 class="mb-4 text-center">店舗一覧</h4>
+                            <div class="fadein">
+                                <h4 class="mb-4 text-center">店舗一覧</h4>
 
-                            <div class="row justify-content-center gx-5">
-                                <div class="col-6 col-md-2 text-center">
-                                    <div class="restaurant_img">
-                                        <img src="../img/restaurant2.jpg" class="rounded-circle img-fluid mb-1">
-                                        <p><i class="bi bi-geo-alt-fill"></i>東京都渋谷区xxxx xxxx</p>
+                                <div class="row justify-content-center gx-5">
+                                    <div class="col-6 col-md-2 text-center">
+                                        <div class="restaurant_img">
+                                            <img src="../img/restaurant2.jpg" class="rounded-circle img-fluid mb-1">
+                                            <p><i class="bi bi-geo-alt-fill"></i>東京都渋谷区xxxx xxxx</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-6 col-md-2 text-center">
-                                    <div class="restaurant_img">
-                                        <img src="../img/restaurant3.jpg" class="rounded-circle img-fluid mb-1">
-                                        <p><i class="bi bi-geo-alt-fill"></i>千葉県松戸市xxxx xxxx</p>
+                                    <div class="col-6 col-md-2 text-center">
+                                        <div class="restaurant_img">
+                                            <img src="../img/restaurant3.jpg" class="rounded-circle img-fluid mb-1">
+                                            <p><i class="bi bi-geo-alt-fill"></i>千葉県松戸市xxxx xxxx</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-6 col-md-2 text-center">
-                                    <div class="restaurant_img">
-                                        <img src="../img/restaurant4.jpg" class="rounded-circle img-fluid mb-1">
-                                        <p><i class="bi bi-geo-alt-fill"></i>神奈川県横浜市xxxx xxxx</p>
+                                    <div class="col-6 col-md-2 text-center">
+                                        <div class="restaurant_img">
+                                            <img src="../img/restaurant4.jpg" class="rounded-circle img-fluid mb-1">
+                                            <p><i class="bi bi-geo-alt-fill"></i>神奈川県横浜市xxxx xxxx</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-6 col-md-2 text-center">
-                                    <div class="restaurant_img">
-                                        <img src="../img/restaurant5.jpg" class="rounded-circle img-fluid mb-1">
-                                        <p><i class="bi bi-geo-alt-fill"></i>埼玉県川越市xxxx xxxx</p>
+                                    <div class="col-6 col-md-2 text-center">
+                                        <div class="restaurant_img">
+                                            <img src="../img/restaurant5.jpg" class="rounded-circle img-fluid mb-1">
+                                            <p><i class="bi bi-geo-alt-fill"></i>埼玉県川越市xxxx xxxx</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
