@@ -12,32 +12,50 @@
         <link href="../css/base.css" rel="stylesheet" type="text/css">
         <script>
         document.addEventListener('DOMContentLoaded', () => {
-        new Swiper('.swiper', {
-            spaceBetween: 0,
-            loop: true,
-            autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-            },
-            navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-            },
-
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-
-            breakpoints:{
-                0:{
-                    slidesPerView:1,
+            new Swiper('.swiper', {
+                spaceBetween: 0,
+                loop: true,
+                autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
                 },
-                1024:{
-                    slidesPerView:2,
-                }
-            }
+                navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+                },
+
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    draggable: true,
+                },
+
+                breakpoints:{
+                    0:{
+                        slidesPerView:1,
+                    },
+                    1024:{
+                        slidesPerView:2,
+                    }
+                },
+            });
         });
+
+        window.addEventListener('scroll', function(){
+            const scroll = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const containers = document.querySelectorAll('.contents');
+
+            containers.forEach(function(contents){
+                const distanceToContents = contents.offsetTop;
+                if(scroll + windowHeight > distanceToContents){
+                    contents.classList.add('is-active');
+                }
+            });
         });
         </script>
     </head>
@@ -48,13 +66,13 @@
                 <a class="navbar-brand fw-bold fs-3" href="#">Casteria</a>
 
                 <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarContent"
-                aria-controls="navbarContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                    aria-controls="navbarContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
                 >
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -74,171 +92,160 @@
                 </div>
             </div>
             </nav>
-        <div class="banner">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="../img/interior.jpg">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="../img/restaurant.jpg">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="../img/food.jpg">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="../img/food2.jpg">
-                    </div>
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-
-            <div class="container site_wrapper">
-                <h1 class="text-left fs-3">新型コロナウイルスに対する取り組みの最新情報をご案内</h1>
-                <div class="accordion mx-auto accordion-width">
-                    <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                        <div class="fs-3 fw-lighter">■ 衛生面に関して</div>
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                        <p>・マスクを着用しての接客</p>
-                        <p>・出勤前の検温の徹底</p>
-                        <p>・レジカウンターやドリンク受け渡し口等への飛沫防止ガードの設置</p>
-                        <p>・より頻度の高い手洗いの励行</p>
-                        <p>・テーブルにお客様用の消毒用アルコールの設置</p>
-                        <p>・従業員間の距離確保ため、休憩や研修時の客席利用</p>
+            <div class="banner">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../img/interior.jpg" class="banner_image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/restaurant.jpg" class="banner_image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/food.jpg" class="banner_image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/food2.jpg" class="banner_image">
                         </div>
                     </div>
-                    </div>
-                    <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                            <div class="fs-3 fw-lighter">■ お客様へのご協力のお願い</div>
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                        <p>・店内では、飲食時以外のマスク着用をお願いいたします</p>
-                        <p>・入店時の手指の消毒にご協力ください</p>
-                        <p>・レジに並ぶ際、目安を示すフロアステッカーに沿った列間隔の確保にご協力ください</p>
-                        <p>・多数でお越しの際は、お1人がまとめて注文願います</p>
-                        <p>・発熱や体調不良の際はご入店をお控えください</p>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                            <div class="fs-3 fw-lighter">■ サービスに関して</div>
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                        <p>・直接お渡しする商品の提供、金銭授受時にグローブの着用</p>
-                        <p>・ドリンクやフードのサンプリング中止</p>
-                        <p>・地域活動・イベントの中止</p>
-                        <p>・混雑時間帯の客席の譲り合いへのご協力のお願い</p>
-                        <p>・店内設置しているミルク、はちみつ、パウダー類の一時引き下げ</p>
-                        <p>・ドライブスルーサービスの一時休止や客席利用の制限</p>
-                        </div>
-                    </div>
-                    </div>
-
-                </div>
-
-                <div class="information_wrapper my-5">
-                    <h1 class="mb-4 fw-bold fs-2">Signature Food</h1>
-                        <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
-                            <img src="../img/food.jpg" class="img-fluid rounded food_image" alt="">
-                            <div>
-                                <p>
-                                    サーモンは刺身やカルパッチョで食べるのが美味しいですが、
-                                    リッチな気分になれるサーモンステーキがおすすめです。
-                                    サーモンの美味しさを引き立てる2種のソースも絶品です！
-                                </p>
-                            </div>
-                        </div>
-
-                        <h1 class="mb-4 fw-bold fs-2">Our Coffee</h1>
-                        <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
-                            <img src="../img/barista.jpg" class="img-fluid rounded food_image" alt="">
-                            <div>
-                                <p>
-                                    当店のコーヒー豆が厳選して世界中から買い付けています。
-                                    自社のロースタリーで焙煎しています。
-                                </p>
-                            </div>
-                        </div>
-
-                        <h1 class="mb-4 fw-bold fs-2">Our Food</h1>
-                        <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
-                            <img src="../img/food3.jpg" class="img-fluid rounded food_image" alt="">
-                            <div>
-                                <p>
-                                    当店は何よりまずは衛生管理に気をつけています。
-                                    「安心・安全」をお届けするために日々努力しています。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center py-5">
-                        <div class="bg-dark text-light p-4 w-100" style="max-width: 800px;">
-                            <div class="row align-items-center flex-column flex-md-row text-center text-md-start">
-                            <div class="col-md-6">
-                                <h4>Address</h4>
-                                <p>681 xxxx Drive, xxxx xxxx #01</p>
-                                <p>Opening Hours</p>
-                                <p class="fw-bold mt-3">Mondays - Friday: 10am - 9pm</p>
-                                <p>Saturdays,Sunday & Public Holidays: 9am - 9pm</p>
-                            </div>
-
-                            <div class="col-md-6 text-end">
-                                <img src="../img/barista.jpg" class="img-fluid">
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="my-5 text-center d-none d-md-block">
-                    <h4 class="mb-4 text-center">店舗一覧</h4>
-
-                    <div class="row justify-content-center gx-5">
-                        <div class="col-6 col-md-2 text-center">
-                            <div class="restaurant_img">
-                                <img src="../img/restaurant2.jpg" class="rounded-circle img-fluid mb-1">
-                                <p><i class="bi bi-geo-alt-fill"></i>東京都渋谷区xxxx xxxx</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2 text-center">
-                            <div class="restaurant_img">
-                                <img src="../img/restaurant3.jpg" class="rounded-circle img-fluid mb-1">
-                                <p><i class="bi bi-geo-alt-fill"></i>千葉県松戸市xxxx xxxx</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2 text-center">
-                            <div class="restaurant_img">
-                                <img src="../img/restaurant4.jpg" class="rounded-circle img-fluid mb-1">
-                                <p><i class="bi bi-geo-alt-fill"></i>神奈川県横浜市xxxx xxxx</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2 text-center">
-                            <div class="restaurant_img">
-                                <img src="../img/restaurant5.jpg" class="rounded-circle img-fluid mb-1">
-                                <p><i class="bi bi-geo-alt-fill"></i>埼玉県川越市xxxx xxxx</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-scrollbar"></div>
                 </div>
             </div>
+            <div class="contents">
+                <div class="container site_wrapper inner">
+                    <h1 class="text-left fs-3">新型コロナウイルスに対する取り組みの最新情報をご案内</h1>
+                    <div class="accordion mx-auto accordion-width">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    <div class="fs-3 fw-lighter">■ 衛生面に関して</div>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <p>・マスクを着用しての接客</p>
+                                    <p>・出勤前の検温の徹底</p>
+                                    <p>・レジカウンターやドリンク受け渡し口等への飛沫防止ガードの設置</p>
+                                    <p>・より頻度の高い手洗いの励行</p>
+                                    <p>・テーブルにお客様用の消毒用アルコールの設置</p>
+                                    <p>・従業員間の距離確保ため、休憩や研修時の客席利用</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    <div class="fs-3 fw-lighter">■ お客様へのご協力のお願い</div>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <p>・店内では、飲食時以外のマスク着用をお願いいたします</p>
+                                    <p>・入店時の手指の消毒にご協力ください</p>
+                                    <p>・レジに並ぶ際、目安を示すフロアステッカーに沿った列間隔の確保にご協力ください</p>
+                                    <p>・多数でお越しの際は、お1人がまとめて注文願います</p>
+                                    <p>・発熱や体調不良の際はご入店をお控えください</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    <div class="fs-3 fw-lighter">■ サービスに関して</div>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <p>・直接お渡しする商品の提供、金銭授受時にグローブの着用</p>
+                                    <p>・ドリンクやフードのサンプリング中止</p>
+                                    <p>・地域活動・イベントの中止</p>
+                                    <p>・混雑時間帯の客席の譲り合いへのご協力のお願い</p>
+                                    <p>・店内設置しているミルク、はちみつ、パウダー類の一時引き下げ</p>
+                                    <p>・ドライブスルーサービスの一時休止や客席利用の制限</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="information_wrapper my-5">
+                        <h1 class="mb-4 fw-bold fs-2">Signature Food</h1>
+                            <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
+                                <img src="../img/food.jpg" class="img-fluid rounded food_image" alt="">
+                                <div>
+                                    <p>サーモンは刺身やカルパッチョで食べるのが美味しいですが、リッチな気分になれるサーモンステーキがおすすめです。サーモンの美味しさを引き立てる2種のソースも絶品です！</p>
+                                </div>
+                            </div>
+
+                            <h1 class="mb-4 fw-bold fs-2">Our Coffee</h1>
+                            <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
+                                <img src="../img/barista.jpg" class="img-fluid rounded food_image" alt="">
+                                <div>
+                                    <p>当店のコーヒー豆が厳選して世界中から買い付けています。自社のロースタリーで焙煎しています。</p>
+                                </div>
+                            </div>
+
+                            <h1 class="mb-4 fw-bold fs-2">Our Food</h1>
+                            <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
+                                <img src="../img/food3.jpg" class="img-fluid rounded food_image" alt="">
+                                <div>
+                                    <p>当店は何よりまずは衛生管理に気をつけています。「安心・安全」をお届けするために日々努力しています。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center py-5">
+                            <div class="bg-dark text-light p-4 w-100" style="max-width: 800px;">
+                                <div class="row align-items-center flex-column flex-md-row text-center text-md-start">
+                                    <div class="col-md-6">
+                                        <h4>Address</h4>
+                                        <p>681 xxxx Drive, xxxx xxxx #01</p>
+                                        <p>Opening Hours</p>
+                                        <p class="fw-bold mt-3">Mondays - Friday: 10am - 9pm</p>
+                                        <p>Saturdays,Sunday & Public Holidays: 9am - 9pm</p>
+                                    </div>
+
+                                    <div class="col-md-6 text-end">
+                                        <img src="../img/barista.jpg" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-5 text-center d-none d-md-block">
+                            <h4 class="mb-4 text-center">店舗一覧</h4>
+
+                            <div class="row justify-content-center gx-5">
+                                <div class="col-6 col-md-2 text-center">
+                                    <div class="restaurant_img">
+                                        <img src="../img/restaurant2.jpg" class="rounded-circle img-fluid mb-1">
+                                        <p><i class="bi bi-geo-alt-fill"></i>東京都渋谷区xxxx xxxx</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-2 text-center">
+                                    <div class="restaurant_img">
+                                        <img src="../img/restaurant3.jpg" class="rounded-circle img-fluid mb-1">
+                                        <p><i class="bi bi-geo-alt-fill"></i>千葉県松戸市xxxx xxxx</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-2 text-center">
+                                    <div class="restaurant_img">
+                                        <img src="../img/restaurant4.jpg" class="rounded-circle img-fluid mb-1">
+                                        <p><i class="bi bi-geo-alt-fill"></i>神奈川県横浜市xxxx xxxx</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-2 text-center">
+                                    <div class="restaurant_img">
+                                        <img src="../img/restaurant5.jpg" class="rounded-circle img-fluid mb-1">
+                                        <p><i class="bi bi-geo-alt-fill"></i>埼玉県川越市xxxx xxxx</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
             <footer class="py-4">
                 <div class="container my-2">
                     <ul class="nav justify-content-center flex-nowrap small">
