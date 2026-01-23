@@ -47,13 +47,13 @@
         });
 
         window.addEventListener('scroll', function () {
-            const scroll = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const fadeins = document.querySelectorAll('.fadein');
+            const scroll_y = window.scrollY;
+            const window_height = window.innerHeight;
+            const fade_ins = document.querySelectorAll('.fadein');
 
-            fadeins.forEach(function (fadein) {
-                const distanceToContents = fadein.offsetTop;
-                if (scroll + windowHeight > distanceToContents) {
+            fade_ins.forEach(function (fadein) {
+                const distance_to_contents = fadein.offsetTop;
+                if (scroll_y + window_height > distance_to_contents) {
                     fadein.classList.add('is-active');
                 }
             });
@@ -90,16 +90,16 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="../img/interior.jpg" class="banner_image">
+                    <img src="../img/interior.jpg" class="banner-image">
                 </div>
                 <div class="swiper-slide">
-                    <img src="../img/restaurant.jpg" class="banner_image">
+                    <img src="../img/restaurant.jpg" class="banner-image">
                 </div>
                 <div class="swiper-slide">
-                    <img src="../img/food.jpg" class="banner_image">
+                    <img src="../img/food.jpg" class="banner-image">
                 </div>
                 <div class="swiper-slide">
-                    <img src="../img/food2.jpg" class="banner_image">
+                    <img src="../img/food2.jpg" class="banner-image">
                 </div>
             </div>
             <div class="swiper-button-prev"></div>
@@ -109,7 +109,7 @@
         </div>
     </div>
 
-    <div class="container site_wrapper">
+    <div class="container site-wrapper">
         <h1 class="text-left fs-3 mb-4">新型コロナウイルスに対する取り組みの最新情報をご案内</h1>
         <div class="accordion  mx-auto w-100">
             <div class="accordion-item">
@@ -121,12 +121,14 @@
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse">
                     <div class="accordion-body">
-                        <p>・マスクを着用しての接客</p>
-                        <p>・出勤前の検温の徹底</p>
-                        <p>・レジカウンターやドリンク受け渡し口等への飛沫防止ガードの設置</p>
-                        <p>・より頻度の高い手洗いの励行</p>
-                        <p>・テーブルにお客様用の消毒用アルコールの設置</p>
-                        <p>・従業員間の距離確保ため、休憩や研修時の客席利用</p>
+                        <ul>
+                            <li>・マスクを着用しての接客</li>
+                            <li>・出勤前の検温の徹底</li>
+                            <li>・レジカウンターやドリンク受け渡し口等への飛沫防止ガードの設置</li>
+                            <li>・より頻度の高い手洗いの励行</li>
+                            <li>・テーブルにお客様用の消毒用アルコールの設置</li>
+                            <li>・従業員間の距離確保ため、休憩や研修時の客席利用</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -139,11 +141,13 @@
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse">
                     <div class="accordion-body">
-                        <p>・店内では、飲食時以外のマスク着用をお願いいたします</p>
-                        <p>・入店時の手指の消毒にご協力ください</p>
-                        <p>・レジに並ぶ際、目安を示すフロアステッカーに沿った列間隔の確保にご協力ください</p>
-                        <p>・多数でお越しの際は、お1人がまとめて注文願います</p>
-                        <p>・発熱や体調不良の際はご入店をお控えください</p>
+                        <ul>
+                            <li>・店内では、飲食時以外のマスク着用をお願いいたします</li>
+                            <li>・入店時の手指の消毒にご協力ください</li>
+                            <li>・レジに並ぶ際、目安を示すフロアステッカーに沿った列間隔の確保にご協力ください</li>
+                            <li>・多数でお越しの際は、お1人がまとめて注文願います</li>
+                            <li>・発熱や体調不良の際はご入店をお控えください</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -156,12 +160,14 @@
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse">
                     <div class="accordion-body">
-                        <p>・直接お渡しする商品の提供、金銭授受時にグローブの着用</p>
-                        <p>・ドリンクやフードのサンプリング中止</p>
-                        <p>・地域活動・イベントの中止</p>
-                        <p>・混雑時間帯の客席の譲り合いへのご協力のお願い</p>
-                        <p>・店内設置しているミルク、はちみつ、パウダー類の一時引き下げ</p>
-                        <p>・ドライブスルーサービスの一時休止や客席利用の制限</p>
+                        <ul>
+                            <li>・直接お渡しする商品の提供、金銭授受時にグローブの着用</li>
+                            <li>・ドリンクやフードのサンプリング中止</li>
+                            <li>・地域活動・イベントの中止</li>
+                            <li>・混雑時間帯の客席の譲り合いへのご協力のお願い</li>
+                            <li>・店内設置しているミルク、はちみつ、パウダー類の一時引き下げ</li>
+                            <li>・ドライブスルーサービスの一時休止や客席利用の制限</li>
+                        </ul>
                     </div>
                 </div>
             </div>

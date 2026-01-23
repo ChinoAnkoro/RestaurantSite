@@ -50,7 +50,7 @@ body {
 	position: relative;
 }
 
-.swiper-slide img.banner_image {
+.swiper-slide img.banner-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -58,6 +58,10 @@ body {
 
 .swiper-scrollbar {
   width: 400px !important;
+}
+
+.accordion-body ul li{
+	padding-bottom: 10px;
 }
 
 @media (max-width: 767px) {
@@ -71,7 +75,7 @@ body {
     justify-content: center;
   }
 
-  .swiper-slide img.banner_image {
+  .swiper-slide img.banner-image {
 	height: 95%;
 }
 
