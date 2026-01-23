@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, address,
+ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 100%;
+	text-align: left;
+	list-style-type: none;
+	border-collapse: collapse;
+}
+
+textarea { font-size: 100%; vertical-align:middle;}
+img { border-style: none; display: block; }
+hr { display: none; }
+em{font-style: normal}
+input{line-height:auto;vertical-align:middle;}
+strong.more{color:#c30}
+a{text-decoration: none;}
+
+
+body {
+	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	background-color: #FFEFD5;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.banner{
+	position: relative;
+	width: 100%;
+}
+
+.navbar{
+	background-color: lightgray;
+}
+
+.swiper {
+    width: 100%;
+    height: 400px;
+	position: relative;
+}
+
+.swiper-slide img.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-scrollbar {
+  width: 400px !important;
+}
+
+.accordion-body ul li{
+	padding-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .swiper {
+    height: 250px;
+	overflow: hidden;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .swiper-slide img.banner-image {
+	height: 95%;
+}
+
+  .swiper-slide {
+    padding: 0 8%;
+  }
+
+  .swiper-button-prev {
+    left: -10px;
+  }
+
+  .swiper-button-next {
+    right: -10px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 50px;
+    height: 50px;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 20px;
+  }
+
+  footer{
+	font-size: 0.5rem;
+  }
+}
+
+.food-image {
+	width: 500px;
+	height: 350px;
+	object-fit: cover;
+	justify-content: flex-start;
+}
+
+.accordion-button {
+  background-color: #ffcbb3;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #ffcbb3;
+  color: #000;
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  display: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-body {
+  background-color: #FFEFD5;
+}
+
+.accordion-item{
+	border: none;
+	margin-bottom: 6px;
+}
+
+.accordion-body p {
+    margin-bottom: 0.5rem;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.restaurant-img{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+
+.restaurant-img p {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.restaurant-img i {
+  font-size: 0.9rem;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.restaurant-img img{
+	width: 80%;
+	height: 80%;
+	object-fit: cover;
+}
+
+footer{
+	background-color: darkgray;
+}
+
+.fadein{
+	opacity: 0;
+	visibility: hidden;
+	transition: all 1s;
+	transform: translateY(150px);
+}
+
+.is-active{
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
