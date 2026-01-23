@@ -107,7 +107,7 @@ body {
   }
 }
 
-.food_image {
+.food-image {
 	width: 500px;
 	height: 350px;
 	object-fit: cover;
@@ -151,25 +151,25 @@ body {
     object-fit: cover;
 }
 
-.restaurant_img{
+.restaurant-img{
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
 	margin: 0 auto;
 }
 
-.restaurant_img p {
+.restaurant-img p {
   font-size: 0.7rem;
   margin: 0;
 }
 
-.restaurant_img i {
+.restaurant-img i {
   font-size: 0.9rem;
   margin-right: 4px;
   vertical-align: middle;
 }
 
-.restaurant_img img{
+.restaurant-img img{
 	width: 80%;
 	height: 80%;
 	object-fit: cover;
